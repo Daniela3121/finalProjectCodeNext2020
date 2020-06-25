@@ -8,12 +8,13 @@ import java.util.ArrayList;
 public class rmFacts {
     private ArrayList<String> facts;
     private JSONObject data;
+   // private int img;
     private int index = 0;
 
     public rmFacts(ArrayList<String> facts, JSONObject data) {
         this.facts = facts;
         this.data = data;
-
+        //this.img = img;
     }
     public String getName(){
         try {
@@ -30,6 +31,10 @@ public class rmFacts {
             e.printStackTrace();
         } return "";
     }
+
+//    public int getPic(){
+//        return img;
+//    }
 
     public String getStatus(){
         try {

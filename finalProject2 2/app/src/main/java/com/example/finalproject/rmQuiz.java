@@ -4,7 +4,9 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
 import android.util.Log;
+import android.view.View;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.android.volley.Request;
@@ -38,6 +40,9 @@ public class rmQuiz extends AppCompatActivity {
     rmFacts rick;
     rmFacts morty;
     rmFacts summer;
+    ArrayList<rmFacts> quizCharacters;
+    //ImageView fake;
+    int characterIndex  = 0;
 
 
     @Override
@@ -52,6 +57,8 @@ public class rmQuiz extends AppCompatActivity {
         moreHintsbtn=findViewById(R.id.moreHintsbtn);
         knowbtn=findViewById(R.id.knowItbtn);
         giveupbtn=findViewById(R.id.giveupbtn);
+        quizCharacters = new ArrayList<rmFacts>();
+
 
        // factsDisplay.setText();
 
@@ -86,7 +93,11 @@ public class rmQuiz extends AppCompatActivity {
                             RickFacts.add("this character likes science");
                             RickFacts.add("this character has 2 grandchildren");
 
+                            //rick=new rmFacts(RickFacts,charactersrm.get(0),R.drawable.confusedcat);
                             rick=new rmFacts(RickFacts,charactersrm.get(0));
+
+
+                            quizCharacters.add(rick);
 
                             ArrayList<String> MortyFacts= new ArrayList<String>();
                             MortyFacts.add("this character is a male");
@@ -95,12 +106,18 @@ public class rmQuiz extends AppCompatActivity {
 
                             morty=new rmFacts(MortyFacts,charactersrm.get(0));
 
+                            quizCharacters.add(morty);
+
                             ArrayList<String> SummerFacts= new ArrayList<String>();
                             SummerFacts.add("this character is a female");
                             SummerFacts.add("this character goes to High School");
                             SummerFacts.add("this character uses her phone a lot");
 
                             summer=new rmFacts(SummerFacts,charactersrm.get(0));
+
+                            quizCharacters.add(summer);
+
+                            Collections.shuffle(quizCharacters);
 
 
 
@@ -124,23 +141,31 @@ public class rmQuiz extends AppCompatActivity {
 
         requestQueue.add(jsonObjectRequest); //make the request
 
-        //ArrayList<String> RickFacts= new ArrayList<String>();
-        //RickFacts.add("has 2 grandchildren");
-        //RickFacts.add("likes to drink");
-        //RickFacts.add("likes science");
-        //rmTittle.setText(charactersrm.size()+"");
+        knowbtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
 
-        //Collections.shuffle(RickFacts);
-        //rmFacts rick=new rmFacts(RickFacts,charactersrm.get(0));
-        //rmTittle.setText(RickFacts.size()+"");
-        //ArrayList<String> mortyFacts= new ArrayList<String>();
+                factsDisplay.setText(quizCharacters.get(characterIndex++).getFact());
 
-        //mortyFacts.add("this character is a male");
-        //mortyFacts.add("this character is in High School");
+            }
+        });
 
-        //Collections.shuffle(RickFacts);
-        //rmFacts morty =new rmFacts(mortyFacts,charactersrm.get(0));
+
 
     }
+
+//
+//    public void giveUp(){
+//
+//        fake.setImageResource();
+//        tvName.setText();
+//        factsDisplay.setText(quizCharacters.get(characterIndex).getPic());
+//
+//        //countdown
+//        factsDisplay.setText(quizCharacters.get(characterIndex++).getFact());
+//
+//
+//
+//    }
 
 }
