@@ -36,6 +36,8 @@ public class rmQuiz extends AppCompatActivity {
     Button knowbtn;
     Button giveupbtn;
     rmFacts rick;
+    rmFacts morty;
+    rmFacts summer;
 
 
     @Override
@@ -80,10 +82,28 @@ public class rmQuiz extends AppCompatActivity {
                             //rmTittle.setText(charactersrm.get(0).getString("name")+"");
 
                             ArrayList<String> RickFacts= new ArrayList<String>();
-                            RickFacts.add("has 2 grandchildren");
-                            RickFacts.add("likes to drink");
-                            RickFacts.add("likes science");
+                            RickFacts.add("this character likes to drink");
+                            RickFacts.add("this character likes science");
+                            RickFacts.add("this character has 2 grandchildren");
+
                             rick=new rmFacts(RickFacts,charactersrm.get(0));
+
+                            ArrayList<String> MortyFacts= new ArrayList<String>();
+                            MortyFacts.add("this character is a male");
+                            MortyFacts.add("this character has brown hair");
+                            MortyFacts.add("this character says oh jeez");
+
+                            morty=new rmFacts(MortyFacts,charactersrm.get(0));
+
+                            ArrayList<String> SummerFacts= new ArrayList<String>();
+                            SummerFacts.add("this character is a female");
+                            SummerFacts.add("this character goes to High School");
+                            SummerFacts.add("this character uses her phone a lot");
+
+                            summer=new rmFacts(SummerFacts,charactersrm.get(0));
+
+
+
 
                         } catch (JSONException e) {
                             e.printStackTrace();
