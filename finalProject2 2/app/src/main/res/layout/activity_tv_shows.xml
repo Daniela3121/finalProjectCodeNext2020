@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".TvShowsActivity"
-    android:background="#000000 ">
+    android:background="#000000">
 
     <TextView
         android:id="@+id/textView"
@@ -23,7 +23,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <Button
-        android:id="@+id/button"
+        android:id="@+id/buttonMovies"
         android:layout_width="326dp"
         android:layout_height="70dp"
         android:layout_marginTop="64dp"
@@ -33,13 +33,13 @@
         android:background="#D09EED"
         android:textColor="@android:color/black"
         android:textStyle="bold"
-        app:layout_constraintBottom_toTopOf="@+id/button2"
+        app:layout_constraintBottom_toTopOf="@+id/buttonGTV"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView"
         app:layout_constraintVertical_bias="0.317" />
 
     <Button
-        android:id="@+id/button2"
+        android:id="@+id/buttonGTV"
         android:layout_width="326dp"
         android:layout_height="70dp"
         android:layout_marginEnd="40dp"
@@ -49,11 +49,11 @@
         android:textColor="@android:color/black"
         android:background="#9EEDE9"
         android:textStyle="bold"
-        app:layout_constraintBottom_toTopOf="@+id/button3"
+        app:layout_constraintBottom_toTopOf="@+id/buttonRM"
         app:layout_constraintEnd_toEndOf="parent" />
 
     <Button
-        android:id="@+id/button3"
+        android:id="@+id/buttonRM"
         android:layout_width="326dp"
         android:layout_height="70dp"
         android:layout_marginEnd="40dp"

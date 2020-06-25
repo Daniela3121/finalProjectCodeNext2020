@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".rmQuiz"
+    android:background="@android:color/black">
+
+    <TextView
+        android:id="@+id/rmTitle"
+        android:layout_width="406dp"
+        android:layout_height="48dp"
+        android:background="#9EEDAF"
+        android:text="      RICK AND MORTY"
+        android:textColor="@android:color/black"
+        android:fontFamily="monospace"
+        android:textSize="25dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.4"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.004" />
+
+    <TextView
+        android:id="@+id/factsDisplay"
+        android:textColor="@android:color/white"
+        android:layout_width="319dp"
+        android:layout_height="97dp"
+        android:fontFamily="monospace"
+        android:layout_marginEnd="44dp"
+        android:layout_marginRight="44dp"
+        android:layout_marginBottom="484dp"
+        android:text="facts"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <Button
+        android:id="@+id/moreHintsbtn"
+        android:layout_width="281dp"
+        android:layout_height="71dp"
+        android:layout_marginStart="64dp"
+        android:layout_marginLeft="64dp"
+        android:layout_marginTop="336dp"
+        android:text="I NEED ANOTHER HINT"
+        android:background="#7DDDEA"
+        android:fontFamily="monospace"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/knowItbtn"
+        android:layout_width="281dp"
+        android:layout_height="71dp"
+        android:layout_marginTop="44dp"
+        android:layout_marginEnd="64dp"
+        android:layout_marginRight="64dp"
+        android:text="Guess Character"
+        android:fontFamily="monospace"
+        android:background="#7DDDEA"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/moreHintsbtn" />
+
+    <Button
+        android:id="@+id/giveupbtn"
+        android:layout_width="281dp"
+        android:layout_height="71dp"
+        android:layout_marginStart="64dp"
+        android:layout_marginLeft="64dp"
+        android:layout_marginTop="48dp"
+        android:text="Give up"
+        android:fontFamily="monospace"
+        android:background="#7DDDEA"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/knowItbtn" />
+</androidx.constraintlayout.widget.ConstraintLayout>
