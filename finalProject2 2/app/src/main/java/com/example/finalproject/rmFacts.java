@@ -8,13 +8,13 @@ import java.util.ArrayList;
 public class rmFacts {
     private ArrayList<String> facts;
     private JSONObject data;
-   // private int img;
+    private int img;
     private int index = 0;
 
-    public rmFacts(ArrayList<String> facts, JSONObject data) {
+    public rmFacts(ArrayList<String> facts, JSONObject data, int img) {
         this.facts = facts;
         this.data = data;
-        //this.img = img;
+        this.img = img;
     }
     public String getName(){
         try {
@@ -32,9 +32,9 @@ public class rmFacts {
         } return "";
     }
 
-//    public int getPic(){
-//        return img;
-//    }
+    public int getPic(){
+        return img;
+    }
 
     public String getStatus(){
         try {
@@ -53,7 +53,12 @@ public class rmFacts {
     }
 
     public String getFact(){
-        return facts.get(index++);
+        if (facts.size()>index) {
+            return facts.get(index++);
+        }
+        else {
+            return facts.get(2);
+        }
     }
 }
 

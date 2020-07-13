@@ -74,4 +74,43 @@
         android:background="#7DDDEA"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/knowItbtn" />
+
+    <EditText
+        android:id="@+id/et"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="260dp"
+        android:layout_marginEnd="172dp"
+        android:layout_marginRight="172dp"
+        android:ems="10"
+        android:hint="Guess Character"
+        android:inputType="textPersonName"
+        android:textColor="@android:color/white"
+        android:visibility="invisible"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/submitbtn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="28dp"
+        android:layout_marginLeft="28dp"
+        android:layout_marginTop="260dp"
+        android:text="submit"
+        android:visibility="invisible"
+        app:layout_constraintStart_toEndOf="@+id/et"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/correctChar"
+        android:layout_width="255dp"
+        android:layout_height="227dp"
+        android:layout_marginTop="68dp"
+        android:layout_marginEnd="76dp"
+        android:layout_marginRight="76dp"
+        android:visibility="invisible"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:srcCompat="@tools:sample/avatars" />
 </androidx.constraintlayout.widget.ConstraintLayout>

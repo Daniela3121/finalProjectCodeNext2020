@@ -34,7 +34,7 @@ public class TvShowsActivity extends AppCompatActivity {
         GeneraltvShows.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
+            goToGeneraltvshows();
             }
         });
     }

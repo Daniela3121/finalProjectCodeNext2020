@@ -3,9 +3,11 @@ package com.example.finalproject;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
+import android.os.CountDownTimer;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -40,8 +42,14 @@ public class rmQuiz extends AppCompatActivity {
     rmFacts rick;
     rmFacts morty;
     rmFacts summer;
+    rmFacts beth;
+    rmFacts jerry;
+    EditText etHidden;
+    Button submit;
+    ImageView correctChar;
     ArrayList<rmFacts> quizCharacters;
-    //ImageView fake;
+    private CountDownTimer pictureTime;
+    private long timer=4000;
     int characterIndex  = 0;
 
 
@@ -57,6 +65,9 @@ public class rmQuiz extends AppCompatActivity {
         moreHintsbtn=findViewById(R.id.moreHintsbtn);
         knowbtn=findViewById(R.id.knowItbtn);
         giveupbtn=findViewById(R.id.giveupbtn);
+        etHidden=findViewById(R.id.et);
+        submit=findViewById(R.id.submitbtn);
+        correctChar=findViewById(R.id.correctChar);
         quizCharacters = new ArrayList<rmFacts>();
 
 
@@ -75,7 +86,7 @@ public class rmQuiz extends AppCompatActivity {
                 new Response.Listener<JSONObject>() {
                     @Override
                     public void onResponse(JSONObject response) {
-                        //Log.d("request", "response:  "+ response.toString());
+                        Log.d("request", "response:  "+ response.toString());
                         try {
                             JSONArray data  = response.getJSONArray("results");
                             Log.d("data",data.toString());
@@ -86,15 +97,15 @@ public class rmQuiz extends AppCompatActivity {
                                     charactersrm.add(data.getJSONObject(i));
                                 }
                             }
-                            //rmTittle.setText(charactersrm.get(0).getString("name")+"");
+                           // rmTittle.setText(charactersrm.get(0).getString("name")+"");
 
                             ArrayList<String> RickFacts= new ArrayList<String>();
                             RickFacts.add("this character likes to drink");
                             RickFacts.add("this character likes science");
                             RickFacts.add("this character has 2 grandchildren");
 
-                            //rick=new rmFacts(RickFacts,charactersrm.get(0),R.drawable.confusedcat);
-                            rick=new rmFacts(RickFacts,charactersrm.get(0));
+                            // rick=new rmFacts(RickFacts,charactersrm.get(0),R.drawable.confusedcat);
+                            rick=new rmFacts(RickFacts,charactersrm.get(0),R.drawable.rsanchez);
 
 
                             quizCharacters.add(rick);
@@ -104,7 +115,7 @@ public class rmQuiz extends AppCompatActivity {
                             MortyFacts.add("this character has brown hair");
                             MortyFacts.add("this character says oh jeez");
 
-                            morty=new rmFacts(MortyFacts,charactersrm.get(0));
+                            morty=new rmFacts(MortyFacts,charactersrm.get(1),R.drawable.morty2);
 
                             quizCharacters.add(morty);
 
@@ -113,13 +124,30 @@ public class rmQuiz extends AppCompatActivity {
                             SummerFacts.add("this character goes to High School");
                             SummerFacts.add("this character uses her phone a lot");
 
-                            summer=new rmFacts(SummerFacts,charactersrm.get(0));
+                            summer=new rmFacts(SummerFacts,charactersrm.get(2),R.drawable.ssmith);
 
                             quizCharacters.add(summer);
 
+                            ArrayList<String> BethFacts= new ArrayList<String>();
+                            BethFacts.add("this character is a female");
+                            BethFacts.add("this character has blond hair");
+                            BethFacts.add("this character is married");
+
+                            beth=new rmFacts(BethFacts,charactersrm.get(3),R.drawable.bsmith);
+
+                            quizCharacters.add(beth);
+
+                            ArrayList<String> JerryFacts= new ArrayList<String>();
+                            JerryFacts.add("this character is a male");
+                            JerryFacts.add("this character is not considered as smart");
+                            JerryFacts.add("this character has brown hair");
+
+                            jerry=new rmFacts(JerryFacts,charactersrm.get(4),R.drawable.jsmith);
+
+                            quizCharacters.add(jerry);
+
                             Collections.shuffle(quizCharacters);
-
-
+                            factsDisplay.setText(quizCharacters.get(characterIndex).getFact());
 
 
                         } catch (JSONException e) {
@@ -140,17 +168,65 @@ public class rmQuiz extends AppCompatActivity {
         );
 
         requestQueue.add(jsonObjectRequest); //make the request
+        pictureTime= new CountDownTimer(timer,1000) {
+            @Override
+            public void onTick(long millisUntilFinished) {
 
+            }
+
+            @Override
+            public void onFinish() {
+
+            }
+        };
         knowbtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+//                if (quizCharacters.size()>characterIndex) {
+//                    factsDisplay.setText(quizCharacters.get(characterIndex).getFact());
+//                    characterIndex++;
+//                }
+                etHidden.setVisibility(View.VISIBLE);
+                submit.setVisibility(View.VISIBLE);
+            }
+        });
 
-                factsDisplay.setText(quizCharacters.get(characterIndex++).getFact());
+        submit.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                String charguess = etHidden.getText().toString().toLowerCase();
+                String charName= quizCharacters.get(characterIndex).getName().toLowerCase();
+
+                if (charguess.equals(charName)){
+                    etHidden.setVisibility(View.INVISIBLE);
+                    submit.setVisibility(View.INVISIBLE);
+                    factsDisplay.setVisibility(View.INVISIBLE);
+                    correctChar.setVisibility(View.VISIBLE);
+                    correctChar.setImageResource(quizCharacters.get(characterIndex).getPic());
+                }
 
             }
         });
 
+        giveupbtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                correctChar.setVisibility(View.VISIBLE);
+                rmTittle.setText("       "+quizCharacters.get(characterIndex).getName().toUpperCase());
+                correctChar.setImageResource(quizCharacters.get(characterIndex).getPic());
+                factsDisplay.setVisibility(View.INVISIBLE);
 
+            }
+        });
+
+        moreHintsbtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                //factsDisplay.setText(rick.getFact());
+                factsDisplay.setText(quizCharacters.get(characterIndex).getFact());
+
+            }
+        });
 
     }
 
