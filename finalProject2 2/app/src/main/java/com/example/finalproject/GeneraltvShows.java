@@ -36,9 +36,9 @@ public class GeneraltvShows extends AppCompatActivity {
 
         tvtitleShows=findViewById(R.id.tvtitleShows);
         Facts4tvshowsDisplay=findViewById(R.id.Facts4tvshowsDisplay);
-        moreHintsShowsbtn=findViewById(R.id.moreHintsbtn);
+        moreHintsShowsbtn=findViewById(R.id.moreHintsShowsbtn);
         guessShowbtn=findViewById(R.id.guessShowbtn);
-        giveupShowsbtn=findViewById(R.id.giveupbtn);
+        giveupShowsbtn=findViewById(R.id.giveupShowsbtn);
         et2hidden=findViewById(R.id.et2hidden);
         submit2=findViewById(R.id.submit2);
 

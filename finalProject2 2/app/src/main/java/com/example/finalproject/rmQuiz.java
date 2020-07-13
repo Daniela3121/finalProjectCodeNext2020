@@ -168,17 +168,17 @@ public class rmQuiz extends AppCompatActivity {
         );
 
         requestQueue.add(jsonObjectRequest); //make the request
-        pictureTime= new CountDownTimer(timer,1000) {
-            @Override
-            public void onTick(long millisUntilFinished) {
-
-            }
-
-            @Override
-            public void onFinish() {
-
-            }
-        };
+//        pictureTime= new CountDownTimer(timer,1000) {
+//            @Override
+//            public void onTick(long millisUntilFinished) {
+//
+//            }
+//
+//            @Override
+//            public void onFinish() {
+//
+//            }
+//        };
         knowbtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -198,11 +198,35 @@ public class rmQuiz extends AppCompatActivity {
                 String charName= quizCharacters.get(characterIndex).getName().toLowerCase();
 
                 if (charguess.equals(charName)){
+
                     etHidden.setVisibility(View.INVISIBLE);
                     submit.setVisibility(View.INVISIBLE);
                     factsDisplay.setVisibility(View.INVISIBLE);
-                    correctChar.setVisibility(View.VISIBLE);
-                    correctChar.setImageResource(quizCharacters.get(characterIndex).getPic());
+
+                    new CountDownTimer(4000,1000) {
+                        @Override
+                        public void onTick(long millisUntilFinished) {
+
+                            correctChar.setVisibility(View.VISIBLE);
+                            correctChar.setImageResource(quizCharacters.get(characterIndex).getPic());
+
+                        }
+
+                        @Override
+                        public void onFinish() {
+
+                            correctChar.setVisibility(View.INVISIBLE);
+                            etHidden.setVisibility(View.INVISIBLE);
+                            submit.setVisibility(View.INVISIBLE);
+                            factsDisplay.setVisibility(View.VISIBLE);
+                            characterIndex++;
+                            factsDisplay.setText(quizCharacters.get(characterIndex).getFact());
+
+                        }
+                    }.start();
+
+
+
                 }
 
             }
@@ -211,10 +235,28 @@ public class rmQuiz extends AppCompatActivity {
         giveupbtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                correctChar.setVisibility(View.VISIBLE);
-                rmTittle.setText("       "+quizCharacters.get(characterIndex).getName().toUpperCase());
-                correctChar.setImageResource(quizCharacters.get(characterIndex).getPic());
-                factsDisplay.setVisibility(View.INVISIBLE);
+                new CountDownTimer(4000,1000) {
+                    @Override
+                    public void onTick(long millisUntilFinished) {
+
+                        correctChar.setVisibility(View.VISIBLE);
+                        correctChar.setImageResource(quizCharacters.get(characterIndex).getPic());
+
+                    }
+
+                    @Override
+                    public void onFinish() {
+
+                        correctChar.setVisibility(View.INVISIBLE);
+                        etHidden.setVisibility(View.INVISIBLE);
+                        submit.setVisibility(View.INVISIBLE);
+                        factsDisplay.setVisibility(View.VISIBLE);
+                        characterIndex++;
+                        factsDisplay.setText(quizCharacters.get(characterIndex).getFact());
+
+                    }
+                }.start();
+
 
             }
         });
