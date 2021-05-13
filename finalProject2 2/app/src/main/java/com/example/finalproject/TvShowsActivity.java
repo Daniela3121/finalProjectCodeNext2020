@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
@@ -37,6 +38,14 @@ public class TvShowsActivity extends AppCompatActivity {
             goToGeneraltvshows();
             }
         });
+
+        movies.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                goToMovies();
+                Log.d("test", "hi");
+            }
+        });
     }
 
     public void goToRmactivity(){
@@ -47,5 +56,9 @@ public class TvShowsActivity extends AppCompatActivity {
     public void goToGeneraltvshows(){
         Intent toGeneraltvShows = new Intent(this,GeneraltvShows.class);
         startActivity(toGeneraltvShows);
+    }
+    public void goToMovies(){
+        Intent toMovies = new Intent(this,movieActivity.class);
+        startActivity(toMovies);
     }
 }

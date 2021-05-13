@@ -29,14 +29,14 @@
         android:layout_marginTop="64dp"
         android:layout_marginEnd="40dp"
         android:layout_marginRight="40dp"
-        android:text="Movies"
         android:background="#D09EED"
+        android:text="Movies"
         android:textColor="@android:color/black"
         android:textStyle="bold"
         app:layout_constraintBottom_toTopOf="@+id/buttonGTV"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView"
-        app:layout_constraintVertical_bias="0.317" />
+        app:layout_constraintVertical_bias="0.246" />
 
     <Button
         android:id="@+id/buttonGTV"
@@ -44,10 +44,10 @@
         android:layout_height="70dp"
         android:layout_marginEnd="40dp"
         android:layout_marginRight="40dp"
-        android:layout_marginBottom="76dp"
+        android:layout_marginBottom="28dp"
+        android:background="#9EEDE9"
         android:text="General TV shows"
         android:textColor="@android:color/black"
-        android:background="#9EEDE9"
         android:textStyle="bold"
         app:layout_constraintBottom_toTopOf="@+id/buttonRM"
         app:layout_constraintEnd_toEndOf="parent" />

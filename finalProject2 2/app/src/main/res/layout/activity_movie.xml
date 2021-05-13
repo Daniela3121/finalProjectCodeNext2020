@@ -4,16 +4,16 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".rmQuiz"
+    tools:context=".GeneraltvShows"
     android:background="@android:color/black">
 
     <TextView
-        android:id="@+id/rmTitle"
+        android:id="@+id/movieTitle"
         android:layout_width="406dp"
         android:layout_height="48dp"
-        android:background="#9EEDAF"
+        android:background="#A91B2F"
         android:fontFamily="monospace"
-        android:text="      RICK AND MORTY"
+        android:text="           Movies"
         android:textColor="@android:color/black"
         android:textSize="25dp"
         android:textStyle="bold"
@@ -25,97 +25,102 @@
         app:layout_constraintVertical_bias="0.004" />
 
     <TextView
-        android:id="@+id/factsDisplay"
-        android:layout_width="319dp"
-        android:layout_height="97dp"
-        android:layout_marginEnd="44dp"
-        android:layout_marginRight="44dp"
-        android:layout_marginBottom="436dp"
-        android:fontFamily="monospace"
-        android:text="facts"
-        android:textColor="@android:color/white"
-        android:textSize="20dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent" />
-
-    <Button
-        android:id="@+id/moreHintsbtn"
-        android:layout_width="281dp"
-        android:layout_height="71dp"
-        android:layout_marginStart="64dp"
-        android:layout_marginLeft="64dp"
-        android:layout_marginTop="336dp"
-        android:background="#7DDDEA"
-        android:fontFamily="monospace"
-        android:text="I NEED ANOTHER HINT"
-        android:textStyle="bold"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <Button
-        android:id="@+id/knowItbtn"
-        android:layout_width="281dp"
-        android:layout_height="71dp"
-        android:layout_marginTop="24dp"
+        android:id="@+id/facts4moviesDisplay"
+        android:layout_width="296dp"
+        android:layout_height="145dp"
+        android:layout_marginTop="52dp"
         android:layout_marginEnd="64dp"
         android:layout_marginRight="64dp"
-        android:background="#7DDDEA"
         android:fontFamily="monospace"
-        android:text="Guess Character"
-        android:textStyle="bold"
+        android:text="facts display"
+        android:textColor="@android:color/white"
+        android:textSize="20dp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/moreHintsbtn" />
+        app:layout_constraintTop_toBottomOf="@+id/movieTitle" />
 
     <Button
-        android:id="@+id/giveupbtn"
+        android:id="@+id/moreHintsMoviebtn"
         android:layout_width="281dp"
         android:layout_height="71dp"
         android:layout_marginStart="64dp"
         android:layout_marginLeft="64dp"
-        android:layout_marginTop="24dp"
-        android:background="#7DDDEA"
+        android:layout_marginTop="88dp"
+        android:background="#E7BE67"
         android:fontFamily="monospace"
-        android:text="Give up"
+        android:text="I NEED ANOTHER HINT"
+        android:textColor="@android:color/black"
         android:textStyle="bold"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/knowItbtn" />
+        app:layout_constraintTop_toBottomOf="@+id/facts4moviesDisplay" />
+
+    <Button
+        android:id="@+id/guessMoviebtn"
+        android:layout_width="281dp"
+        android:layout_height="71dp"
+        android:layout_marginStart="64dp"
+        android:layout_marginLeft="64dp"
+        android:layout_marginTop="20dp"
+        android:background="#E7BE67"
+        android:fontFamily="monospace"
+        android:text="guess movie"
+        android:textColor="@android:color/black"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/moreHintsMoviebtn" />
+
+    <Button
+        android:id="@+id/giveupMoviebtn"
+        android:layout_width="281dp"
+        android:layout_height="71dp"
+        android:layout_marginStart="64dp"
+        android:layout_marginLeft="64dp"
+        android:layout_marginTop="20dp"
+        android:background="#E7BE67"
+        android:fontFamily="monospace"
+        android:text="give up"
+        android:textColor="@android:color/black"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/guessMoviebtn" />
 
     <EditText
-        android:id="@+id/et"
+        android:id="@+id/et3hidden"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="260dp"
-        android:layout_marginEnd="172dp"
-        android:layout_marginRight="172dp"
+        android:layout_marginStart="40dp"
+        android:layout_marginLeft="40dp"
+        android:layout_marginTop="280dp"
         android:ems="10"
-        android:hint="Guess Character"
+        android:hint="guess movie"
         android:inputType="textPersonName"
         android:textColor="@android:color/white"
+        android:textColorHint="#B1AFAF"
         android:visibility="invisible"
-        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <Button
-        android:id="@+id/submitbtn"
+        android:id="@+id/submit3"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="28dp"
-        android:layout_marginLeft="28dp"
-        android:layout_marginTop="260dp"
-        android:text="submit"
+        android:layout_marginTop="280dp"
+        android:layout_marginEnd="40dp"
+        android:layout_marginRight="40dp"
+        android:text="SUBMIT"
         android:visibility="invisible"
-        app:layout_constraintStart_toEndOf="@+id/et"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <ImageView
-        android:id="@+id/correctChar"
-        android:layout_width="255dp"
-        android:layout_height="227dp"
-        android:layout_marginTop="68dp"
-        android:layout_marginEnd="76dp"
-        android:layout_marginRight="76dp"
+        android:id="@+id/movieImage"
+        android:layout_width="235dp"
+        android:layout_height="202dp"
+        android:layout_marginTop="80dp"
+        android:layout_marginEnd="88dp"
+        android:layout_marginRight="88dp"
         android:visibility="invisible"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         tools:srcCompat="@tools:sample/avatars" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -4,35 +4,35 @@ import org.json.JSONObject;
 
 import java.util.ArrayList;
 
-public class objectTvshows {
+public class objectmovies {
 
-    private ArrayList<String> TvShowsFacts;
-    private String ShowName;
+    private ArrayList<String> MovieFacts;
+    private String MovieName;
     private String description;
     private int index;
     private int img;
 
-    public objectTvshows(ArrayList<String> tvShowsFacts, String showName, String description, int img) {
-        TvShowsFacts = tvShowsFacts;
-        ShowName = showName;
+    public objectmovies(ArrayList<String> movieFacts, String movieName, String description, int img) {
+        MovieFacts = movieFacts;
+        MovieName = movieName;
         this.description = description;
         this.img = img;
     }
 
-    public ArrayList<String> getTvShowsFacts() {
-        return TvShowsFacts;
+    public ArrayList<String> getMovieFacts() {
+        return MovieFacts;
     }
 
-    public void setTvShowsFacts(ArrayList<String> tvShowsFacts) {
-        TvShowsFacts = tvShowsFacts;
+    public void setMovieFacts(ArrayList<String> movieFacts) {
+        MovieFacts = movieFacts;
     }
 
-    public String getShowName() {
-        return ShowName;
+    public String getMovieName() {
+        return MovieName;
     }
 
-    public void setShowName(String showName) {
-        ShowName = showName;
+    public void setMovieName(String movieName) {
+        MovieName = movieName;
     }
 
     public String getDescription() {
@@ -59,11 +59,11 @@ public class objectTvshows {
         this.img = img;
     }
     public String getFact(){
-        if (TvShowsFacts.size()>index) {
-            return TvShowsFacts.get(index++);
+        if (MovieFacts.size()>index) {
+            return MovieFacts.get(index++);
         }
         else {
-            return TvShowsFacts.get(4);
+            return MovieFacts.get(4);
         }
     }
 
