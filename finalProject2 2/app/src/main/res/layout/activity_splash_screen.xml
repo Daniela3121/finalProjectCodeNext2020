@@ -8,12 +8,12 @@
     android:background="@android:color/black">
 
     <ImageView
-        android:id="@+id/gameLogo"
+        android:id="@+id/nonamelogo"
         android:layout_width="433dp"
         android:layout_height="762dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        tools:srcCompat="@tools:sample/avatars" />
+        tools:src="@drawable/nonamelogo" />
 </androidx.constraintlayout.widget.ConstraintLayout>

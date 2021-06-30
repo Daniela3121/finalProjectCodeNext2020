@@ -10,15 +10,17 @@ import android.widget.ImageView;
 public class splashScreen extends AppCompatActivity {
 
         ImageView gamelogo;
+        ImageView nonamelogo;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_splash_screen);
 
-       gamelogo=findViewById(R.id.gameLogo);
+        nonamelogo=findViewById(R.id.nonamelogo);
+       // gamelogo=findViewById(R.id.gameLogo);
 
-       gamelogo.setImageResource(R.drawable.gamelogo);
+       nonamelogo.setImageResource(R.drawable.nonamelogo);
 
         new CountDownTimer(4000, 1000) {
             @Override

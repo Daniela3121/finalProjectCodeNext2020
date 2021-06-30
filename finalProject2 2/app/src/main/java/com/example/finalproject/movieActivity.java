@@ -46,6 +46,7 @@ public class movieActivity extends AppCompatActivity {
         et3hidden = findViewById(R.id.et3hidden);
         submit3 = findViewById(R.id.submit3);
         movieImage = findViewById(R.id.movieImage);
+
         moviesList = new ArrayList<objectmovies>();
 
         ArrayList<String> tenetFacts = new ArrayList<String>();
@@ -99,6 +100,7 @@ public class movieActivity extends AppCompatActivity {
         moviesList.add(ratatouille);
 
         Collections.shuffle(moviesList);
+
         facts4movieDisplay.setText(moviesList.get(movieindex).getFact());
 
     moreHintsMoviebtn.setOnClickListener(new View.OnClickListener() {
@@ -157,19 +159,15 @@ public class movieActivity extends AppCompatActivity {
                     new CountDownTimer(4000, 1000) {
                         @Override
                         public void onTick(long millisUntilFinished) {
-
                             movieImage.setVisibility(View.VISIBLE);
                             facts4movieDisplay.setVisibility(View.INVISIBLE);
                             movieImage.setImageResource(moviesList.get(movieindex).getImg());
                             et3hidden.setVisibility(View.INVISIBLE);
                             submit3.setVisibility(View.INVISIBLE);
-                            movieTitle.setText("        "+movieName);
-
+                            movieTitle.setText("       "+movieName);
                         }
-
                         @Override
                         public void onFinish() {
-
                             movieImage.setVisibility(View.INVISIBLE);
                             et3hidden.setVisibility(View.INVISIBLE);
                             et3hidden.setText("");
@@ -178,14 +176,34 @@ public class movieActivity extends AppCompatActivity {
                             movieindex++;
                             movieTitle.setText("         Movies");
                             facts4movieDisplay.setText(moviesList.get(movieindex).getFact());
-
                         }
                     }.start();
-
                 }
-
             }
         });
 
+    }
+    public void layoutChange(){
+        new CountDownTimer(4000, 1000) {
+            @Override
+            public void onTick(long millisUntilFinished) {
+                movieImage.setVisibility(View.VISIBLE);
+                facts4movieDisplay.setVisibility(View.INVISIBLE);
+                movieImage.setImageResource(moviesList.get(movieindex).getImg());
+                et3hidden.setVisibility(View.INVISIBLE);
+                submit3.setVisibility(View.INVISIBLE);
+            }
+
+            @Override
+            public void onFinish() {
+
+                movieImage.setVisibility(View.INVISIBLE);
+                et3hidden.setVisibility(View.INVISIBLE);
+                submit3.setVisibility(View.INVISIBLE);
+                movieindex++;
+                facts4movieDisplay.setText(moviesList.get(movieindex).getFact());
+                facts4movieDisplay.setVisibility(View.VISIBLE);
+            }
+        }.start();
     }
 }

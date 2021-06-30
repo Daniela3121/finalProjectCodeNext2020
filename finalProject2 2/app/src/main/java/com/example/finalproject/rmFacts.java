@@ -1,8 +1,6 @@
 package com.example.finalproject;
-
 import org.json.JSONException;
 import org.json.JSONObject;
-
 import java.util.ArrayList;
 
 public class rmFacts {

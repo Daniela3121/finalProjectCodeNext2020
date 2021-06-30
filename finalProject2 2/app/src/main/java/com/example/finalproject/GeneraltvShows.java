@@ -60,10 +60,10 @@ public class GeneraltvShows extends AppCompatActivity {
         tvshowsList.add(friends);
 
         ArrayList<String> reasonsFacts = new ArrayList<>();
-        reasonsFacts.add("This show has 4 seasons");
+        reasonsFacts.add("The main characters are trying to figure out a character's death");
         reasonsFacts.add("5 characters died throughout the series");
         reasonsFacts.add("The actor Brandon Flynn plays one of the main characters");
-        reasonsFacts.add("The main characters are trying to figure out a character's death");
+        reasonsFacts.add("This show has 4 seasons");
         reasonsFacts.add("Selena Gomez was supposed to play the main character");
         reasons = new objectTvshows(reasonsFacts, "13 REASONS WHY", "the story of a young high school student that " +
                 "suicides after falling in dispair.", R.drawable.reasonsimg);
@@ -95,8 +95,8 @@ public class GeneraltvShows extends AppCompatActivity {
 
         ArrayList<String> riverdaleFacts = new ArrayList<>();
         riverdaleFacts.add("Cole Sprouse plays one of the main characters");
-        riverdaleFacts.add("This show has 4 seasons");
         riverdaleFacts.add("At the end of most seasons it's said that the same character has died");
+        riverdaleFacts.add("This show has 4 seasons");
         riverdaleFacts.add("Every episode of this series is based on a movie");
         riverdale = new objectTvshows(riverdaleFacts, "Riverdale", "", R.drawable.riverdaleimg);
         tvshowsList.add(riverdale);

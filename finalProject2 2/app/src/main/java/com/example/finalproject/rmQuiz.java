@@ -70,9 +70,7 @@ public class rmQuiz extends AppCompatActivity {
         correctChar=findViewById(R.id.correctChar);
         quizCharacters = new ArrayList<rmFacts>();
 
-
        // factsDisplay.setText();
-
         wantedChars.add("morty smith");
         wantedChars.add("summer smith");
         wantedChars.add("jerry smith");
@@ -182,7 +180,6 @@ public class rmQuiz extends AppCompatActivity {
             public void onClick(View v) {
                 String charguess = etHidden.getText().toString().toLowerCase();
                 String charName= quizCharacters.get(characterIndex).getName().toLowerCase();
-                Log.d("test", charName);
 
                 if (charguess.equals(charName)){
 
